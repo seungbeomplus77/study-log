@@ -15,13 +15,15 @@
 	 <script type='text/javascript' src='파일명.js'></script>
 	```
 
-  	- 자바 스크립트 파일
-	![파일](/images/file.jpg)
-
-
+  	
+	![파일](/images/file.jpg)<br>
+	js파일 입니다.
 	
  
- 
- 
-     	- 실행결과
- 	![실행결과](/images/result.jpg)
+ 	
+ 	<hr style="border: 1px solid #2c2c2c;">
+ 	
+     
+
+ 	![실행결과](/images/result.jpg)<br>
+   	실행결과 입니다.
