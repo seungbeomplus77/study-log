@@ -15,5 +15,7 @@
 	 <script type='text/javascript' src='파일명.js'></script>
 	```
 	 
-	 ![파일](./images/file.jpg)
-	 ![실행결과](./images/result.jpg)
+	![파일](./images/file.jpg)
+
+
+	![실행결과](./images/result.jpg)
