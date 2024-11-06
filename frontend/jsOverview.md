@@ -14,8 +14,14 @@
 	 ```javascript
 	 <script type='text/javascript' src='파일명.js'></script>
 	```
-	 
+
+  	- 자바 스크립트 파일
 	![파일](/images/file.jpg)
 
 
-	![실행결과](/images/result.jpg)
+	
+ 
+ 
+ 
+     	- 실행결과
+ 	![실행결과](/images/result.jpg)
