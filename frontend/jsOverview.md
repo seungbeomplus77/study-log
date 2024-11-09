@@ -16,7 +16,7 @@
 	```
 
   	
-	![파일]	(/images/file.jpg)<br>
+	![실행결과](/images/file.jpg)<br>
 	js파일 입니다.
 	
  
