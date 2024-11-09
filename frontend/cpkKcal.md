@@ -360,13 +360,15 @@ const fnKeyup = e => {
                 carbRatio: (t / total) * 100,
                 proteinRatio: (d / total) * 100,
                 fatRatio
+                ```
+
+                </details>
 
 
-    ![파일](/images/육개장.jpg)<br>
-    육개장 영양성분
+        ![파일](/images/육개장.jpg)<br>
+        육개장 영양성분
 
-
-    ![파일](/images/243.jpg)<br>
-    실행결과
+        ![파일](/images/243.jpg)<br>
+        실행결과
 
     
