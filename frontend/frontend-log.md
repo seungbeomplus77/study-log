@@ -11,8 +11,8 @@
 
 ## 코드
 <details>
-<summary>코드 보기
-```HTML5
+  <summary>코드 보기</summary>
+  <pre><code>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,9 +49,9 @@
 	</script>
 </body>
 </html>
-```
+  </code></pre>
 </details>
-</summary>
+
 
 ### 개념 정리
 eval() : 주어진 문자열을 javascript 코드로 해석하여 실행.
