@@ -364,10 +364,6 @@ const fnKeyup = e => {
 
                 </details>
 
-
-     ![파일](/images/432.jpg)<br>
-      - 육개장 영양성분
-
-     ![파일](/images/243.jpg)<br>
-      - 실행 결과
+        ## Result
+        <a>"http://localhost:9090/study/han/quiz01/kcal_dom.html"</a>
     
