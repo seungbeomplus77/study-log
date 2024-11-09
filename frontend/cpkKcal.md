@@ -56,7 +56,7 @@ const inputForm = document.querySelector('.input-form');  // . : class 선택자
 - 등록 성공/실패 기능 없음
 
 ## 📄 Result
-- 육개장 사발면의 영양성분을 참고해서 실행결과를 테스트 해봤습니다.
+- 육개장 컵라면의 영양성분을 참고해서 실행결과를 테스트 해봤습니다.
 <img src="https://github.com/user-attachments/assets/57f53569-ed41-482a-ac87-90e318ade9c4" alt="육개장영양성분표" width="300" height="auto">
 
 ![실행화면](https://github.com/user-attachments/assets/10725a31-72a1-41b5-83e9-3ead343fcd5b)
