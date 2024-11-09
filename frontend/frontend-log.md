@@ -10,6 +10,7 @@
 			  : eval() : 보안상의 위험이 있어서 수식 라이브러리를 사용하거나, 정규식 표현식으로 검증을 거쳐야 함.
 
 ## 코드
+
 ```HTML5
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
-
+	<details>
 	<h3>간단한 계산기</h3>
 	<div>
 		<input type="text" id="inputs" placeholder="수식을 입력하세요"> <!-- 수식을 입력할 텍스트 박스 -->
@@ -46,7 +47,7 @@
 		layout.innerHTML = out; // 결과를 layout에 표시
 	}
 	</script>
-
+	</details>
 </body>
 </html>
 
