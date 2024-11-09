@@ -365,10 +365,9 @@ const fnKeyup = e => {
                 </details>
 
 
-        ![파일](/images/육개장.jpg)<br>
-        육개장 영양성분
+     ![파일](../images/432.jpg)<br>
+      - 육개장 영양성분
 
-        ![파일](/images/243.jpg)<br>
-        실행결과
-
+     ![파일](../images/243.jpg)<br>
+      - 실행 결과
     
