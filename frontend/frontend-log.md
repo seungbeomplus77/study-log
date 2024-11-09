@@ -21,6 +21,7 @@
 </head>
 <body>
 	<details>
+	<pre><code>
 	<h3>간단한 계산기</h3>
 	<div>
 		<input type="text" id="inputs" placeholder="수식을 입력하세요"> <!-- 수식을 입력할 텍스트 박스 -->
@@ -47,6 +48,7 @@
 		layout.innerHTML = out; // 결과를 layout에 표시
 	}
 	</script>
+	</pre></code>
 	</details>
 </body>
 </html>
