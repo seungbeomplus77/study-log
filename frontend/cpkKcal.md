@@ -55,7 +55,10 @@ const inputForm = document.querySelector('.input-form');  // . : class 선택자
 - 데이터 수정 기능 부재
 - 등록 성공/실패 기능 없음
 
-## 📄 코드
+## 📄 Result
+http://localhost:9090/study/han/quiz01/kcal_dom.html
+
+## 📄 Code
 
 <details>
 <summary>HTML 코드 보기</summary>
@@ -361,9 +364,3 @@ const fnKeyup = e => {
                 proteinRatio: (d / total) * 100,
                 fatRatio
                 ```
-
-                </details>
-
-        ## Result
-        <a>"http://localhost:9090/study/han/quiz01/kcal_dom.html"</a>
-    
