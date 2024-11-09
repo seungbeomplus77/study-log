@@ -59,13 +59,13 @@ const inputForm = document.querySelector('.input-form');  // . : class 선택자
 - 육개장 컵라면의 영양성분을 참고해서 실행결과를 테스트 해봤습니다.
 <img src="https://github.com/user-attachments/assets/57f53569-ed41-482a-ac87-90e318ade9c4" alt="육개장영양성분표" width="300" height="auto">
 
-![실행화면](https://github.com/user-attachments/assets/10725a31-72a1-41b5-83e9-3ead343fcd5b)
+![실행화면](https://github.com/user-attachments/assets/7caa14ef-3df3-47c4-81ad-2df0fc8fc231)
 
 
 ## 📄 Code
 
 <details>
-<summary>HTML 코드 보기</summary>
+<summary>HTML</summary>
 
 
 ```html
@@ -133,7 +133,7 @@ const inputForm = document.querySelector('.input-form');  // . : class 선택자
 </details>
 
 <details>
-<summary>CSS 코드 보기</summary>
+<summary>CSS</summary>
 
 ```css
 * { padding: 0; margin: 0; }
@@ -241,9 +241,10 @@ input::placeholder { text-align: center; }
 </details>
 
 <details>
-<summary>JavaScript 코드 보기</summary>
+<summary>JavaScript</summary>
 
 ```javascript
+<script type="text/javascript">
 function removePlaceholder(input) {
     input.placeholder = '';
 }
@@ -366,5 +367,66 @@ const fnKeyup = e => {
             ratio = {
                 carbRatio: (t / total) * 100,
                 proteinRatio: (d / total) * 100,
-                fatRatio
-                ```
+                fatRatio: (g / total) * 100
+            };
+        }
+        
+        let tan_g = t * 4;
+        let dan_g = d * 4;
+        let gi_g = g * 9;
+        let total_kcal = tan_g + dan_g + gi_g;
+        
+        inputEls[4].value = `${Math.round(ratio.carbRatio)} : ${Math.round(ratio.proteinRatio)} : ${Math.round(ratio.fatRatio)}`;
+        inputEls[5].value = `${tan_g} kcal`;
+        inputEls[6].value = `${dan_g} kcal`;
+        inputEls[7].value = `${gi_g} kcal`;
+        inputEls[8].value = `${total_kcal} kcal`;
+    }
+}
+
+function insertDiet() {
+    const inputForm = document.querySelector('#input-form');
+    const inputEls = inputForm.querySelectorAll('input');
+    const dietMain = document.querySelector('#diet-main');
+    
+    if (!check(inputForm)) {
+        return;
+    }
+    
+    let row = document.createElement('tr');
+    row.setAttribute('height', '30');
+    row.setAttribute('align', 'center');
+    row.onmouseover = function() { this.setAttribute('class', 'over'); };
+    row.onmouseout = function() { this.removeAttribute('class'); };
+    
+    for (let i = 0; i < inputEls.length; i++) {
+        let cell = document.createElement('td');
+        cell.textContent = inputEls[i].value.trim();
+        row.appendChild(cell);
+    }
+
+    let cell = document.createElement('td');
+    let deleteBtn = document.createElement('button');
+    deleteBtn.className = 'btn';
+    deleteBtn.textContent = '삭제';
+    deleteBtn.onclick = function(){ 
+        deleteRow(row);
+    };
+    
+    cell.appendChild(deleteBtn);
+    row.appendChild(cell);
+    
+    dietMain.appendChild(row);
+    
+    for (let i = 0; i < inputEls.length; i++) {
+        inputEls[i].value = '';
+    }
+}
+
+function deleteRow(row) {
+    row.remove();
+}
+
+window.addEventListener('load', () => init());
+</script>
+```
