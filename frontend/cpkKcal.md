@@ -28,8 +28,8 @@ let row = document.createElement('tr');  // 테이블에 새로운 행 추가
 - querySelector: 여러 요소가 일치하더라도 첫 번째 일치 요소만 반환(배열X)
 - createElement :  지정한 tagName의 HTML 요소를 만들어 반환
 
-- CSS 선택자 사용법
 ```javascript
+// CSS 선택자 사용법
 const inputForm = document.querySelector('#input-form');  // # : id 선택자 // // HTML5에서 id가 input-form인 첫번째 요소 선택
 const inputForm = document.querySelector('.input-form');  // . : class 선택자 // // HTML5에서 class가 input-form인 첫번째 요소 선택
 ```
