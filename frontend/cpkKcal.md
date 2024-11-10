@@ -23,20 +23,21 @@
 ```javascript
 let row = document.createElement('tr');  // 테이블에 새로운 행 추가
 ```
-- querySelector, querySelectorAll
+- querySelector, querySelectorAll, createElement
 - querySelectorAll: 모든 요소를 배열로 반환
-- querySelector: 첫 번째 일치 요소만 반환
+- querySelector: 여러 요소가 일치하더라도 첫 번째 일치 요소만 반환(배열X)
+- createElement :  지정한 tagName의 HTML 요소를 만들어 반환
 
 - CSS 선택자 사용법
 ```javascript
-const inputForm = document.querySelector('#input-form');  // # : id 선택자
-const inputForm = document.querySelector('.input-form');  // . : class 선택자
+const inputForm = document.querySelector('#input-form');  // # : id 선택자 // // HTML5에서 id가 input-form인 첫번째 요소 선택
+const inputForm = document.querySelector('.input-form');  // . : class 선택자 // // HTML5에서 class가 input-form인 첫번째 요소 선택
 ```
 
 ## ⚠️ Issues
 
 ### 1. 키보드 입력 관련
-- 마지막 필드 엔터키 미작동
+- 등록 후 엔터키 누르면 등록 된 데이터 삭제 현상
 - 첫 입력 필드 엔터키 오작동
 
 ### 2. 값 입력 검증
