@@ -137,6 +137,7 @@ const inputForm = document.querySelector('.input-form');  // . : class 선택자
 <summary>CSS</summary>
 
 ```css
+<style type="text/css">
 * { padding: 0; margin: 0; }
 *, *::after, *::before { box-sizing: border-box; }
 
@@ -238,6 +239,7 @@ input::placeholder { text-align: center; }
     font-weight: bold;
     color: #007bff;
 }
+</style>
 ```
 </details>
 
