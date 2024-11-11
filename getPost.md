@@ -52,7 +52,7 @@
 	</script>
 ```
 
-### 4. ok.jsp 파일의 의미
+### 4. ok.jsp 파일과 get.jsp 파일을 구분하는 의미
 - 이클립스 기준으로 ok.jsp 파일이 get.jsp와 같은 폴더 안에 있어야한다. 
 - get.jsp가 클라이언트고, ok.jsp가 클라이언트가 보낸 파라미터 값들을 받는다고 생각하면 쉽다.
 ## ⚠️ Issues
@@ -91,7 +91,7 @@
 <summary>get.jsp와 ok.jsp 코드</summary>
 
 ```
-	// get.jsp 코드 시작
+	// get.jsp 파일의 코드 시작
 	<%@page import="java.net.URLEncoder"%>
 	<%@ page contentType="text/html; charset=UTF-8"%>
 	<!DOCTYPE html>
@@ -126,9 +126,9 @@
 		<p> <button type="button" onclick="sendOk();"> 보내기 </button> </p>
 	</body>
 	</html>
-	// get.jsp 코드 끝
+	// get.jsp 파일의 코드 끝
 	
-	// ok.jsp 코드 시작 부분
+	// ok.jsp 파일의 코드 시작 부분
 	
 	<%@ page contentType="text/html; charset=UTF-8"%>
 <%
