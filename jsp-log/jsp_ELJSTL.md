@@ -3,17 +3,16 @@
 ```JSP
 <c:forEach var="date" begin="1" end="${week-1}">
 ```
-- var: 반복문 안에서 사용할 변수 이름을 지정합니다 (여기서는 'date'라는 이름으로 지정)
-- begin: 반복 시작 숫자 (1부터 시작)
-- end: 반복 끝 숫자 (여기서는 week-1까지)
-- varStatus: 반복의 상태를 담는 변수 (현재 몇 번째 반복인지 등의 정보를 담음)
-
 ```JSP
 <c:forEach var="date" begin="1" end="5" varStatus="vs">
    ${vs.count} // 1,2,3,4,5 로 증가
    ${vs.index} // 0,1,2,3,4 로 증가
 </c:forEach>
 ```
+- var: 반복문 안에서 사용할 변수 이름을 지정합니다 (여기서는 'date'라는 이름으로 지정)
+- begin: 반복 시작 숫자 (1부터 시작)
+- end: 반복 끝 숫자 (여기서는 week-1까지)
+- varStatus: 반복의 상태를 담는 변수 (현재 몇 번째 반복인지 등의 정보를 담음)
 
 ## <c:choose>, <c:when>, <c:otherwise> 태그
 ```JSP
