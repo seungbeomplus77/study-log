@@ -40,9 +40,8 @@ public class BoardServlet extends HttpServlet {
 	// 서블릿 코드 작성 시작
 }
 ```
-@WebServlet("/bbs/*"): URL 매핑 어노테이션
-/bbs/로 시작하는 모든 웹 요청을 이 서블릿이 처리
-예: /bbs/list.do, /bbs/write.do 등
+- @WebServlet("/bbs/*"): URL 매핑 어노테이션 /bbs/로 시작하는 모든 웹 요청을 이 서블릿이 처리
+- 예: /bbs/list.do, /bbs/write.do 등
 
 
 # 서블릿 관련 메서드 및 함수
@@ -56,11 +55,6 @@ public class BoardServlet extends HttpServlet {
 - **getRequestDispatcher()**: 서블릿과 JSP 간에 요청을 포워딩하거나 포함하는 데 사용
   - 예: `request.getRequestDispatcher("/newPage.jsp");`
 
-## 예외 처리
-
-- `insert`, `update`, `delete`할 때만 `throws` (예외 catch)
-- 테이블이 2개 이상일 때만 예외 처리 필요, 1개일 땐 필요 없음
-
 ## INSERT 문 작성
 
 ```sql
@@ -68,15 +62,7 @@ INSERT INTO bbs (num, name, pwd, subject, content, hitCount, reg_date, ipAddr)
 VALUES (bbs_seq.NEXTVAL, ?, ?, ?, ?, 0, ?, SYSDATE)
 ```
 - 물음표가 다섯 번째 있어도 reg_date 순서가 맞지 않으면 INSERT가 되지 않음.
-
-
-
-- **extends HttpServlet**: 서블릿의 기본 기능을 상속받음
-
-- **erialVersionUID**: 서블릿의 버전 관리를 위한 ID
-
-- **예외 처리**
--insert, update, delete할 때만 throws(예외 catch)
+- insert, update, delete할 때만 throws (예외 catch)
 - 테이블이 2개 이상일 때만 예외 처리 필요, 1개일 땐 필요 없음
 
 ## 클라이언트 정보
