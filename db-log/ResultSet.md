@@ -1,9 +1,6 @@
 # Java `ResultSet`과 반복 처리
-
-## 💡 Lessons Learned
-
 ## 📅 작성일: 2024-11-20
-
+## 💡 Lessons Learned
 ### `ResultSet`이란?
 - **`ResultSet`**: 데이터베이스 쿼리 실행 결과를 테이블 형식으로 저장하는 **Java 객체**입니다.
 - SQL 쿼리의 실행 결과를 행(row) 단위로 접근할 수 있도록 제공됩니다.
