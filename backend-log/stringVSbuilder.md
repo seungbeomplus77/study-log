@@ -2,6 +2,8 @@
 
 ## 💡 Lessons Learned
 
+## 📅 작성일: 2024-11-20
+
 String은 문자열을 수정할 때마다 새로운 공간을 만듬.
 ```JAVA
 String name = "홍";  // 메모리 공간 1
