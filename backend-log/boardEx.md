@@ -123,3 +123,5 @@ VALUES (bbs_seq.NEXTVAL, ?, ?, ?, ?, 0, ?, SYSDATE)
 ## HTML5
 `onclick="location.href='주소';": HTML 요소에서 클릭 시 다른 URL로 이동하는 JavaScript 코드`
 - 버튼이나 a 태그에서 사용 가능
+- 주소?이름=값&이름=값&이름
+- 이름이 없으면 서블릿 코드에 이름을 넣어준 것이다.
