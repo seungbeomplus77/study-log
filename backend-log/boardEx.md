@@ -122,6 +122,7 @@ VALUES (bbs_seq.NEXTVAL, ?, ?, ?, ?, 0, ?, SYSDATE)
 
 ## HTML5
 `onclick="location.href='주소';": HTML 요소에서 클릭 시 다른 URL로 이동하는 JavaScript 코드`
+
 `<a href="${pageContext.request.contextPath}/bbs/article.do?${query}&num=${nextDto.num}">${nextDto.subject}</a>`
 
 - 버튼이나 a 태그에서 사용 가능
