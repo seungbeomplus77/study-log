@@ -127,4 +127,14 @@ VALUES (bbs_seq.NEXTVAL, ?, ?, ?, ?, 0, ?, SYSDATE)
 
 - 버튼이나 a 태그에서 사용 가능
 - 주소?이름=값&이름=값&이름
-- 이름이 없으면 서블릿 코드에 이름을 넣어준 것이다.
+- 여기서 query는 이름이 없는데 jsp에서 이름이 없다면 서블릿에서 이름=값 형식을 지정해준거임
+- subject도 이름이 없는데, 단순하게 텍스트로 표시할거라면 이름=값 형식 불필요하다.
+
+```JAVA
+// 예시
+String query = "page=" + page;  // page=1
+if(kwd.length() != 0) {
+    query += "&schType=" + schType  // &schType=title
+           + "&kwd=" + URLEncoder.encode(kwd, "utf-8");  // &kwd=검색어
+}
+```
