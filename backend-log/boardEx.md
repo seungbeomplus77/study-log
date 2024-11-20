@@ -117,6 +117,9 @@ VALUES (bbs_seq.NEXTVAL, ?, ?, ?, ?, 0, ?, SYSDATE)
 - **getCookies()** : 요청에 포함된 모든 쿠키를 반환
 `Cookie[] cookies = request.getCookies();`
 
+- **getContextPath()** : 메서드는 서블릿이나 JSP에서 동적으로 컨텍스트 경로를 가져와서, 상대적인 URL을 생성하거나, 환경에 맞게 URL을 만들 때 유용합니다.
+`response.getWriter().write("컨텍스트 경로는: " + contextPath); // 결과 나의 경로가 app이면 /app`
+
 ## HTML5
 `onclick="location.href='주소';": HTML 요소에서 클릭 시 다른 URL로 이동하는 JavaScript 코드`
 - 버튼이나 a 태그에서 사용 가능
