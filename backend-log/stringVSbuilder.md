@@ -31,3 +31,10 @@ String result = query.toString();  // 최종 문자열로 변환
 ```
 
 - 문자열을 많이 수정하거나 붙여야 할 때는 StringBuilder를 쓰면 더 효율적!
+
+**StringBuilder 에서 주로 사용되는 메서드**
+- append(): 문자열 끝에 추가
+- insert(): 특정 위치에 삽입
+- delete(): 특정 부분 삭제
+- reverse(): 문자열 뒤집기
+- toString(): String으로 변환
