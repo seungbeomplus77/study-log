@@ -96,7 +96,7 @@ VALUES (bbs_seq.NEXTVAL, ?, ?, ?, ?, 0, ?, SYSDATE)
 - **getParameter(String name)** : 요청 파라미터 값을 가져옴
 `request.getParameter("username")`
 
-- **getParameterMap()** : 요청에 포함된 모든 파라미터를 Map 형식으로 반환<
+- **getParameterMap()** : 요청에 포함된 모든 파라미터를 Map 형식으로 반환
 `Map<String, String[]> parameters = request.getParameterMap();`
 
 - **getHeader(String name)** : 요청 헤더의 값을 가져옴
