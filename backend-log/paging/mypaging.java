@@ -1,7 +1,7 @@
 package com.hs.util;
 
 // 페이지 수 계산
-public class MyUtil2 {
+public class MyUtil {
     public int pageCount(int dataCount, int size) {
         if (dataCount <= 0) {
             return 0;
