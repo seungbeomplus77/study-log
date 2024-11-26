@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>페이징 테스트</title>
+    <style>
+        .list-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .paginate {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .paginate a {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 0 2px;
+            border: 1px solid #ddd;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .paginate span {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 0 2px;
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+
+        .paginate a:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="list-wrap">
+        <!-- 페이징 표시 영역만 남겨두기 -->
+        <div id="pageBox"></div>
+    </div>
+
+    <script>
+        // 페이지 이동 함수 (전역 정의)
+        window.navigatePage = function (page) {
+            window.location.href = `paging.html?page=${page}`;
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const myUtil = new MyUtil();
+
+            // URL에서 현재 페이지 읽기
+            function getCurrentPageFromUrl() {
+                const params = new URLSearchParams(window.location.search);
+                const page = parseInt(params.get('page'));
+                return page > 0 ? page : 1;
+            }
+
+            // 현재 페이지 및 페이징 설정
+            const currentPage = getCurrentPageFromUrl();
+            const totalPage = 98; // 총 페이지 수
+            const listUrl = "paging.html"; // 페이징 URL
+
+            // 페이징 HTML 생성 및 삽입
+            const pagingHtml = myUtil.paging(currentPage, totalPage, listUrl);
+            document.getElementById("pageBox").innerHTML = pagingHtml;
+        });
+
+        class MyUtil {
+            createLink(url, page, label) {
+                return `<a href="#" onclick="navigatePage(${page}); return false;">${label}</a>`;
+            }
+
+            paging(currentPage, totalPage, listUrl) {
+                if (currentPage < 1 || currentPage > totalPage) {
+                    return "";
+                }
+
+                let html = [];
+                const pagesPerBlock = 10;
+                const blockStartPage = this.calculateBlockStartPage(currentPage, pagesPerBlock);
+                const prevBlockPage = this.calculatePrevBlockPage(blockStartPage, pagesPerBlock);
+                const nextBlockPage = this.calculateNextBlockPage(blockStartPage, pagesPerBlock, totalPage);
+
+                html.push("<div class='paginate'>");
+
+                if (blockStartPage > 1) {
+                    html.push(this.createLink(listUrl, 1, "처음"));
+                    html.push(this.createLink(listUrl, prevBlockPage, "이전"));
+                }
+
+                for (let page = blockStartPage; page < blockStartPage + pagesPerBlock && page <= totalPage; page++) {
+                    if (page === currentPage) {
+                        html.push(`<span>${page}</span>`);
+                    } else {
+                        html.push(this.createLink(listUrl, page, page.toString()));
+                    }
+                }
+
+                if (blockStartPage + pagesPerBlock <= totalPage) {
+                    html.push(this.createLink(listUrl, nextBlockPage, "다음"));
+                    html.push(this.createLink(listUrl, totalPage, "끝"));
+                }
+
+                html.push("</div>");
+                return html.join('');
+            }
+
+            calculateBlockStartPage(currentPage, pagesPerBlock) {
+                return Math.floor((currentPage - 1) / pagesPerBlock) * pagesPerBlock + 1;
+            }
+
+            calculatePrevBlockPage(blockStartPage, pagesPerBlock) {
+                return blockStartPage - pagesPerBlock;
+            }
+
+            calculateNextBlockPage(blockStartPage, pagesPerBlock, totalPage) {
+                const nextBlockStart = blockStartPage + pagesPerBlock;
+                return Math.min(nextBlockStart, totalPage);
+            }
+        }
+    </script>
+</body>
+</html>
