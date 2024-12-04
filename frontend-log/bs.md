@@ -24,14 +24,7 @@
 - space-between: 양쪽 끝에 배치하고, 항목들 사이에 같은 간격
 - space-around: 항목들 사이에 여백을 두고 배치
 
-### align-items: 항목들이 교차축(cross axis)을 따라 어떻게 정렬될지 설정
-- flex-start: 위쪽(기본값)
-- center: 가운데
-- stretch: 항목들이 높이에 맞게 늘어남
-
---------------------------------------------------------------------------------------------------------
-
-#Bootstrap의 CSS 초기화(reset) 주요 코드들
+### align-items: 항목들이 교차축(cross axi드
 
 1. Box-sizing 초기화
 ```
@@ -92,7 +85,7 @@ a:hover {
 }
 ```
 
-7.목록(ul, ol) 초기화
+7. 목록(ul, ol) 초기화
 ```
 ol, ul {
   padding-left: 2rem;
@@ -101,7 +94,7 @@ ol, ul {
 }
 ```
 
-8.이미지 초기화
+8. 이미지 초기화
 ```
 cssCopyimg {
   vertical-align: middle;
@@ -133,3 +126,4 @@ textarea {
   line-height: inherit;
 }
 ```
+---------------------------------------------------------------------------------
