@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	
+		<!-- setter를 이용한 프로퍼티 설정(문자열 또는 기본 자료형) -->
+		<bean id="userService" class="com.user3.UserServiceImpl">
+			<property name="name" value="차차차"/>
+			<property name="tel" value="010-4444-5555"/>
+			<property name="age" value="30"/>
+		</bean>
+		
+		<bean id="userService2" class="com.user3.UserServiceImpl2">
+			<property name="name" value="흐흐흐"/>
+			<property name="tel" value="010-5555-6666"/>
+			<property name="age" value="17"/>
+		</bean>
+		
+		<!-- setter를 이용한 의존성 주입 -->
+		<!-- 생성자를 이용한 의존성 주입은 프로그램 실행 중 값을 변경할 수 없다. -->
+		<!-- setter를 이용한 의존성은 프로그램 실행 중 값을 변경할 수 있으므로 안전하지 않음 -->
+		<!-- 반드시 setter가 존재해야 함 -->
+		<!-- setter 는 name 속성을 기준으로 첫 글자를 대문자로 하며, 앞에 set을 붙인 메소드 -->
+		<!-- name="userService" => setUserService -->
+		
+		<!-- setter는 이거 기준으로 만들어야함 -->
+		<bean id="user" class="com.user3.User">
+			<property name="userService" ref="userService2"/>
+		</bean>
+</beans>
