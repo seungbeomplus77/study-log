@@ -1,6 +1,6 @@
 # 스프링 Bean 의존성 주입 방법 정리
 
-스프링에서는 의존성 주입(DI, Dependency Injection)을 통해 객체 간의 의존성을 설정한다. 아래는 **생성자**를 이용한 방식, **c 네임스페이스**를 이용한 방식, **p 네임스페이스**, 그리고 **컬렉션 타입 주입** 그리고 **setter**를 이용한 방식이다.
+스프링에서는 의존성 주입(DI, Dependency Injection)을 통해 객체 간의 의존성을 설정한다. 아래는 **생성자**를 이용한 방식, **c 네임스페이스**를 이용한 방식, **p 네임스페이스**, 그리고 **컬렉션 타입 주입**, **autowire**를 이용한 주입, 그리고 **setter**를 이용한 방식이다.
 
 ---
 
@@ -130,4 +130,23 @@
 ```
 ---
 
-![image](https://github.com/user-attachments/assets/492915f5-30e2-4e86-9856-fe40c413af28)
+## 6. autowire를 이용한 주입 
+### 특징
+- 자동 주입 기능으로, 빈의 타입 또는 이름을 기준으로 의존성을 주입합니다.
+- autowire="byType": 프로퍼티 타입과 동일한 빈을 찾아 주입.
+- autowire="byName": 프로퍼티 이름과 동일한 빈을 찾아 주입.
+
+### 예제
+```xml
+<bean id="userService" class="com.user6.UserServiceImpl">
+    <property name="name" value="차차차"/>
+    <property name="tel" value="010-4444-5555"/>
+    <property name="age" value="30"/>
+</bean>
+
+<bean id="user" class="com.user6.User" autowire="byType"/>
+
+```
+---
+
+![image](https://github.com/user-attachments/assets/d1603a88-77b8-4284-8400-5a1a08540913)
