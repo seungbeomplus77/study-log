@@ -1,6 +1,6 @@
 # 스프링 Bean 의존성 주입 방법 정리
 
-스프링에서는 의존성 주입(DI, Dependency Injection)을 통해 객체 간의 의존성을 설정한다. 아래는 **생성자**를 이용한 방식, **c 네임스페이스**를 이용한 방식, 그리고 **setter**를 이용한 방식이다.
+스프링에서는 의존성 주입(DI, Dependency Injection)을 통해 객체 간의 의존성을 설정한다. 아래는 **생성자**를 이용한 방식, **c 네임스페이스**를 이용한 방식, **p 네임스페이스**, 그리고 **컬렉션 타입 주입** 그리고 **setter**를 이용한 방식이다.
 
 ---
 
@@ -73,5 +73,61 @@
     <property name="userService" ref="userService2"/>
 </bean>
 ```
+---
 
-![image](https://github.com/user-attachments/assets/b37e51e9-922b-444d-8bd6-86108d01075a)
+## 4. p 네임스페이스를 이용한 의존성 주입
+### 특징
+- p 네임스페이스를 사용하여 setter 주입 방식을 간소화합니다.
+- XML 설정이 간결해지고 가독성이 좋아집니다.
+
+### 예제
+```xml
+<bean id="userService" class="com.user4.UserServiceImpl"
+    p:name="이순신" p:tel="010-6666-5555" p:age="22"/>
+
+<bean id="user" class="com.user4.User"
+    p:userService-ref="userService"/>
+```
+---
+
+## 5. 컬렉션 타입 주입    
+### 특징
+- map, list, props 태그를 사용하여 컬렉션 데이터를 주입합니다.
+- 다양한 데이터 구조를 간편하게 설정 가능.
+
+### 예제
+```xml
+<bean id="userService" class="com.user5.UserServiceImpl">
+    <property name="name" value="컬렉션"/>
+    <property name="address">
+        <map>
+            <entry key="서블릿" value="서울"/>
+            <entry>
+                <key><value>스프링</value></key>
+                <value>경기</value>
+            </entry>
+        </map>
+    </property>
+    <property name="hobby">
+        <list>
+            <value>게임</value>
+            <value>영화</value>
+            <value>운동</value>
+        </list>
+    </property>
+    <property name="tel">
+        <props>
+            <prop key="하하하">010-1111-2222</prop>
+            <prop key="가가가">010-1331-2442</prop>
+            <prop key="나나나">010-1441-2552</prop>
+        </props>
+    </property>
+</bean>
+
+<bean id="user" class="com.user5.User">
+    <property name="userService" ref="userService"/>
+</bean>
+```
+---
+
+![image](https://github.com/user-attachments/assets/492915f5-30e2-4e86-9856-fe40c413af28)
