@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	<bean id="userService" class="com.user5.UserServiceImpl">
+		<property name="name" value="컬렉션"/>
+		
+		<property name="address">
+			<map>
+				<entry key="서블릿" value="서울"/> <!-- <entry key-ref="객체1" value-ref="객체2"/> -->
+				<entry>
+					<key><value>스프링</value></key>
+					<value>경기</value> <!-- <ref bean="객체"/> -->
+				</entry>
+			</map>
+		</property>
+			<property name="hobby">
+				<list>
+					<value>게임</value> <!-- <ref bean="객체"/> -->
+					<value>영화</value>
+					<value>운동</value> 
+				</list>
+			</property>
+			
+			<property name="tel">
+				<props> <!-- Properties 는 키와 값 모두 String 만 가능 -->
+					<prop key="하하하">010-1111-2222</prop>
+					<prop key="가가가">010-1331-2442</prop>
+					<prop key="나나나">010-1441-2552</prop>
+				</props>
+			</property>
+	</bean>
+	
+	<bean id="user" class="com.user5.User">
+		<property name="userService" ref="userService"/>
+	</bean>
+</beans>
