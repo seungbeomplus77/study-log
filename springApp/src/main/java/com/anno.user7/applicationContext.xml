@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+	    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+		
+		<!-- 
+				<context:component-scan base-package="com.anno.user7"/>
+		 -->
+		 
+		 <!-- 
+		 	use-default-filters="false" : 컴포넌트를 자동으로 스캔하지 않는다. 
+		 -->
+		
+		<!-- @Service만 스캔 -->
+		<!-- <context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/> 를 쓰면 service 는 안 터짐 Component 는 최상위 부모이고, 모든 스테레오 타입을 스캔함.-->
+		<context:component-scan base-package="com.anno.user7" 
+			use-default-filters="false">
+			<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+			
+		</context:component-scan>
+</beans>  
