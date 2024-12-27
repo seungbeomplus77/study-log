@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+	    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<!-- Target 클래스(AOP를 적용할 클래스) -->
+	<bean id="testService" class="ex04.aop.pojo.core.TestServiceImpl"/>
+
+	<!-- Advice -->
+	<bean id="myAfterReturnAdvice" class="ex04.aop.pojo.MyAfterReturningLogAdvice"/>
+	<bean id="myLogAspect" class="ex04.aop.pojo.MyLogAspect"/>
+	
+	<!-- aop 네임스페이스를 이용한 AOP 설정 -->
+	<aop:config>
+		<aop:pointcut id="publicMethod" 
+			expression="execution(public * ex04.aop.pojo.core.*Service.*(..))" />
+	
+		<aop:advisor advice-ref="myAfterReturnAdvice" pointcut-ref="publicMethod"/>
+		
+		<aop:aspect id="loggingAspect" ref="myLogAspect">
+			<aop:before pointcut-ref="publicMethod" 
+				method="beforeLogging"/>
+				
+			<aop:after-returning pointcut-ref="publicMethod"
+				method="returningLogging" returning="ret"/>
+				
+			<aop:after-throwing pointcut-ref="publicMethod" 
+				method="throwingLogging" throwing="ex"/>
+				
+			<aop:after pointcut-ref="publicMethod" 
+				method="afterLogging"/>
+		</aop:aspect>
+	
+	</aop:config>
+	
+</beans>  
