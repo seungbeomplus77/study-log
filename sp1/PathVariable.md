@@ -31,6 +31,7 @@
 
 5. **이름 생략**  
    - @PathVariable의 이름이 **메서드 파라미터 이름**과 같다면, `@PathVariable("paramName")`를 **생략**할 수 있다.
+   - **Spring boot 3.2** 부터는 이름을 생략할수없다.
 
 ---
 
