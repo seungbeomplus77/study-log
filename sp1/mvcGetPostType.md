@@ -15,6 +15,7 @@ public String someGetMethod(Model model) {
 
 ## 요청/응답 객체 (HttpServletRequest / HttpServletResponse)
 - 서블릿 API가 필요할 때 직접 사용할 수 있습니다.
+----
 ## 예시
 ```java
 public String somePostMethod(HttpServletRequest request, HttpServletResponse response) {
@@ -25,8 +26,8 @@ public String somePostMethod(HttpServletRequest request, HttpServletResponse res
 ```
 - 스프링이 자동으로 주입해 주므로, 필요한 경우 언제든 파라미터에 선언할 수 있습니다.
 - 다만, Spring MVC의 @RequestParam, @ModelAttribute 등을 통해 더 편리하게 요청 데이터를 받을 수 있으므로, 직접 서블릿 API를 사용할 일은 줄어드는 추세입니다.
-
-# HttpServletRequest 인터페이스에 정의 된 메서드
+---
+## HttpServletRequest 인터페이스에 정의 된 메서드
 - request.getContextPath() : 배포된 웹 애플리케이션의 최상위 경로 (예: "/myapp")
 - request.getRequestURI() : 컨텍스트 패스를 포함한 전체 요청 경로 (예: "/myapp/member/login")
 - request.getQueryString() : URL에 붙은 쿼리 파라미터 (예: "userId=abc&param2=value2")
