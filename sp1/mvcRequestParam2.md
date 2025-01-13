@@ -2,7 +2,7 @@
 
 ## @RequestParam
 - **요청 파라미터와 메소드의 매개변수를 매핑**하는 애노테이션
-- 기본적으로 **필수(required=true)**이므로, 해당 파라미터가 없으면 400(Bad Request) 에러 발생
+- 기본적으로 **필수(required=true)** 이므로, 해당 파라미터가 없으면 400(Bad Request) 에러 발생
 - `required = false` 설정 시, 해당 파라미터가 없어도 에러 발생 없이 null 허용
 - `defaultValue` 속성을 사용하면, 파라미터가 없을 경우(또는 비어 있을 경우) 기본값을 지정 가능
   - 예) `defaultValue = "기본값"`
